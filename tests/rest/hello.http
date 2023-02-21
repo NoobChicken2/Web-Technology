@@ -1,0 +1,197 @@
+GET localhost:3000/auctions
+Accept: application/json
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+POST localhost:3000/auctions
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Knife",
+  "startingBid": 10,
+  "userId": 1,
+  "itemType": "Tools"
+}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 201, "Response status is not 200");
+    }
+);
+%}
+
+###
+PATCH localhost:3000/auctions/1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "BlackBerry",
+  "itemType": "Phone"
+}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+DELETE localhost:3000/auctions
+Accept: application/json
+Authorization: Bearer {{token}}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+GET localhost:3000/bids
+Accept: application/json
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+POST localhost:3000/bids/5
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+  "userId": 1,
+  "amount": 31
+}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+###
+PATCH localhost:3000/bids/2/1
+Content-Type: application/json
+Accept: application/jsone
+Authorization: Bearer {{token}}
+
+{
+  "amount": 600
+}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+DELETE localhost:3000/bids/1/2
+Accept: application/json
+Authorization: Bearer {{token}}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+GET localhost:3000/users
+Accept: application/json
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+POST localhost:3000/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "John3",
+  "password" : "12345678"
+}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+DELETE localhost:3000/users/1
+Accept: application/json
+Authorization: Bearer {{token}}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
+
+###
+PATCH localhost:3000/users/3
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "Klaus1"
+}
+
+> {%
+client.test(
+    "Request executed successfully",
+    function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    }
+);
+%}
