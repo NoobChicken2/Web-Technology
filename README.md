@@ -11,6 +11,10 @@
 
 ## Introduction
 
+Before everything in order to run the page you need to do npm i on the main directory, npm i on the server directory and npm i on the client directory. This way you download all the node modules needed to run the pages.
+
+Then to run the backend and the front end you need to go to the server directory and on the terminal write "run start" and on the client directory "run dev"
+
 Welcome to Web Technology. Last year during Wep Applications you learned about basic web techniques and languages such 
 as HTML, CSS, Javascript and REST. These techniques are the basis of web applications today. Although these applications
 can be accessed from a web browser, they tend to be a lot more dynamic than just plain old sites. Examples of these 
